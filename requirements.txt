@@ -1,0 +1,6 @@
+anthropic
+httpx
+snowflake-connector-python
+plotly
+pandas
+streamlit
