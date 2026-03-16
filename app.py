@@ -437,7 +437,7 @@ tab_esc, tab_miti = st.tabs([
 # Fetch & classify Slack data (shared across tabs)
 # ---------------------------------------------------------------------------
 with st.spinner("Fetching Slack messages..."):
-    all_messages_180d = fetch_slack_messages(30)
+    all_messages_180d = fetch_slack_messages(90)
 
 # Filter to slider window in Python (no extra API call)
 cutoff_ts = str((datetime.now(timezone.utc) - timedelta(days=days_back)).timestamp())
