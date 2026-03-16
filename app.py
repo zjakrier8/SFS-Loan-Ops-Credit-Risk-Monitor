@@ -262,9 +262,9 @@ def _get_snowflake_conn():
     if _USE_PYSNOWFLAKE:
         return None  # sq-pysnowflake manages its own connection
     return snowflake.connector.connect(
-        account="SQUAREINC-SQUARE",
-user="zachk@squareup.com",
-authenticator="externalbrowser",
+        account=os.environ.get("SNOWFLAKE_ACCOUNT", "SQUAREINC-SQUARE"),
+user=os.environ.get("SNOWFLAKE_USER", "zachk@squareup.com"),
+authenticator=os.environ.get("SNOWFLAKE_AUTHENTICATOR", "externalbrowser"),
         warehouse="ADHOC__SMALL",
         role="ZACHK",
     )
